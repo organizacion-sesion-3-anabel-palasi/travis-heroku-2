@@ -106,3 +106,20 @@ INSERT INTO `videogames` (`name`, `description`, `gamePlatform`, `applicationSub
 ('Assassin''s Creed: Unity', 'Assassin''s Creed: Unity es un videojuego de ficción histórica desarrollado por Ubisoft. Es la séptima entrega de la saga Assassin''s Creed y su temática gira en torno a la Revolución Francesa, en el siglo XVIII. El juego fue lanzado en Norteamérica el 11 de noviembre del 2014 y en Europa el 13 de noviembre de 2014.', 'PS4', 'Acción-aventura(parkour) y sigilo', 'https://drh1.img.digitalriver.com/DRHM/Storefront/Company/ubi/images/hero/ubi/ACU_hero.jpg', 'https://www.youtube.com/embed/NVE2FxMWxeg', '2014-11-13'),
 ('League of Legends', 'League of Legends, también conocido por sus siglas LoL, es un videojuego de género multiplayer online battle arena (MOBA). El juego está inspirado en el popular mapa personalizado del Warcraft III, Defense of the Ancients: Allstars (abreviado normalmente con las siglas DotA) diseñado por Steve «Guinsoo» Feak y Steve «Pendragon» Mescon.', 'PC', 'Campo De Batalla Multijugador En Línea', 'http://www.funandseriousgamefestival.com/imagenes/league-of-legends-g.jpg', 'https://www.youtube.com/embed/ZqilPmPw2yc', '2009-10-27');
 
+CREATE TABLE IF NOT EXISTS `tvseries` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` TEXT COLLATE utf8_spanish_ci NOT NULL,
+  `seasons` int(11) NOT NULL,
+  `director` TEXT COLLATE utf8_spanish_ci NOT NULL,
+  `date` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+INSERT INTO `tvseries` (`name`, `seasons`, `director`, `date`) VALUES 
+('Manifest', 3, 'Romeo Tirone', 2018),
+('El Incidente', 1, 'Oriol Paulo', 2021),
+('La Mantis', 1, 'Alice Chegaray', 2017),
+('L Alqueria Blanca', 12, 'Trivision', 2007),
+('La princesa blanca', 1, 'Jamie Payne', 2017),
+('Los Tudor', 4, 'Michael Hirst', 2007),
+('The Spanish Princess', 2, 'Emma Frost', 2019);
