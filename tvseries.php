@@ -11,9 +11,9 @@ class TVSeries extends \Illuminate\Database\Eloquent\Model
 $app->get('/tvseries', function ($req, $res, $args) {
 
     // Creamos un objeto collection + json con la lista de series
-    $series=[];
+
     // Obtenemos la lista de series de la base de datos y la convertimos del formato Json (el devuelto por Eloquent) a un array PHP
-//   $series = json_decode(\TVSeries::all());
+    $series = json_decode(\TVSeries::all());
 
     // Mostramos la vista
     return $this->view->render($res, 'tvserieslist_template.php', [
@@ -41,7 +41,7 @@ $app->get('/tvseries/{name}', function ($req, $res, $args) {
 //Borrar serie
 $app->delete('/tvseries/{name}', function ($req, $res, $args) {
     //Le pasamos la variable para que la encuentre
-    $serie = TVSeries::find($args['name']);
+    $serie = \TVSeries::find($args['name']);
     //Borramos la serie encontrada
     $serie->delete();
 });
@@ -73,6 +73,7 @@ $app->post('/tvseries', function ($req, $res, $args)  {
         }
     }
     $nueva_serie = new TVSeries;
+
     $nueva_serie['name'] = $name;
     $nueva_serie['numberOfSeasons'] = $seasons;
     $nueva_serie['director'] = $director;
@@ -106,7 +107,7 @@ $app->put('/tvseries/{id}', function ($req, $res, $args) {
         }
     }
   
-    $nueva_serie = TVSeries::find($args['id']);
+    $nueva_serie = \TVSeries::find($args['id']);
     $nueva_serie['name'] = $name;
     $nueva_serie['numberOfSeasons'] = $seasons;
     $nueva_serie['director'] = $director;
