@@ -11,9 +11,9 @@ class TVSeries extends \Illuminate\Database\Eloquent\Model
 $app->get('/tvseries', function ($req, $res, $args) {
 
     // Creamos un objeto collection + json con la lista de series
-
+    $series=[];
     // Obtenemos la lista de series de la base de datos y la convertimos del formato Json (el devuelto por Eloquent) a un array PHP
-    $series = json_decode(\TVSeries::all());
+//   $series = json_decode(\TVSeries::all());
 
     // Mostramos la vista
     return $this->view->render($res, 'tvserieslist_template.php', [
