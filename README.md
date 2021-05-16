@@ -12,4 +12,4 @@ composer install
 
 ## Acceso al servidor de producción (Heroku)
 
-http://APP_NAME.herokuapp.com
+https://anabel-travis-heroku-2.herokuapp.com/
