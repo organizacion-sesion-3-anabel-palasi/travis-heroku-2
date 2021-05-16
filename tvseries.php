@@ -96,7 +96,7 @@ $app->put('/tvseries/{id}', function ($req, $res, $args) {
             $name = $datos[$i]['value'];
             break;
         case "numberOfSeasons":
-            $seasons = $datos[$i]['value'];
+            $seasons = intval($datos[$i]['value']);
             break;
         case "director":
             $director = $datos[$i]['value'];
